@@ -4,10 +4,20 @@ import './index.css';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, useNavigate } from 'react-router-dom'
+
+function AppWithNavigate(){
+  const navigate = useNavigate()
+  return (
+    <App navigate = {navigate}/>
+  )
+}
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <AppWithNavigate/>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
