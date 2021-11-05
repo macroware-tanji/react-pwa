@@ -15,7 +15,7 @@ function AppWithNavigate(){
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="react-pwa">
       <AppWithNavigate/>
     </BrowserRouter>
   </React.StrictMode>,
