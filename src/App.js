@@ -132,7 +132,7 @@ class App extends Component{
           <Route exact path="/"  element={<Layout/>}>
             <Route index element={<Home/>}/>
             <Route path="page1" element={<Page1 />} />
-            <Route path="page1/:id" element={<Others params={this.props.params}/>}/>
+            <Route path="page1/:id" element={<Others/>}/>
             <Route path="page1/me" element={<Me/>}/>
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />

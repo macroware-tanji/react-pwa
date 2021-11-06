@@ -4,13 +4,12 @@ import './index.css';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, useNavigate, useParams } from 'react-router-dom'
+import { BrowserRouter, useNavigate } from 'react-router-dom'
 
 function AppWithNavigate(){
   const navigate = useNavigate()
-  const params = useParams()
   return (
-    <App navigate = {navigate} params = {params}/>
+    <App navigate = {navigate}/>
   )
 }
 
