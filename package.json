@@ -53,6 +53,5 @@
   },
   "devDependencies": {
     "webpack-cli": "^4.9.1"
-  },
-  "homepage": "https://macroware-tanji.github.io/react-pwa/"
+  }
 }
