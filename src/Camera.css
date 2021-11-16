@@ -1,0 +1,8 @@
+.camera--img {
+    object-fit: cover;
+}
+
+.camera--hidden {
+    display: none;
+}
+  
