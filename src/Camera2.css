@@ -1,0 +1,16 @@
+.camera2--video {
+    width:320px;
+    height:320px;
+    border:1px solid gray;
+}
+
+.camera2--canvas {
+    width:320px;
+    height:320px;
+    border:1px solid gray;
+}
+
+.camera2--hidden {
+    display: none;
+}
+  

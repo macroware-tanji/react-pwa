@@ -11,6 +11,7 @@ import Others from './Others'
 import About from './About'
 import Contact from './Contact'
 import Camera from './Camera'
+import Camera2 from './Camera2'
 import NotFound from './NotFound'
 
 function Layout() {
@@ -30,6 +31,9 @@ function Layout() {
     }
     else if(e.target.name==="camera"){
       navigate("/camera")
+    }
+    else if(e.target.name==="camera2"){
+      navigate("/camera2")
     }
   }
   return (
@@ -54,6 +58,9 @@ function Layout() {
             <Link to="/camera">Camera</Link>
           </li>
           <li>
+            <Link to="/camera2">Camera2</Link>
+          </li>
+          <li>
             <Link to="/nothing-here">Nothing Here</Link>
           </li>
         </ul>
@@ -63,6 +70,7 @@ function Layout() {
         <button onClick={handleClick} name="about">About</button>
         <button onClick={handleClick} name="contact">Contact</button>
         <button onClick={handleClick} name="camera">Camera</button>
+        <button onClick={handleClick} name="camera2">Camera2</button>
         </div>
       </nav>
 
@@ -145,6 +153,7 @@ class App extends Component{
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
             <Route path="camera" element={<Camera />} />
+            <Route path="camera2" element={<Camera2 />} />
              {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
                 routes for. */}
