@@ -209,10 +209,8 @@ export default class Camera extends Component {
         })
 
     }
-    zoomAndMove2(){
-        this.toucheInfos = {}
-
-        this.canvasRef.current.addEventListener("touchstart",(e)=>{
+    initZoomAndMove(){
+        this.onTouchStart = (e)=>{
             e.preventDefault()
             const rect = this.canvasRef.current.getBoundingClientRect()    
             //console.log("Camera.touchstart")
@@ -227,8 +225,8 @@ export default class Camera extends Component {
 
                 this.toucheInfos[id]={x:x,y:y}
             }
-        })
-        this.canvasRef.current.addEventListener("touchend",(e)=>{
+        }
+        this.onTouchEnd = (e)=>{
             e.preventDefault()
             //const rect = this.canvasRef.current.getBoundingClientRect()    
             //console.log("Camera.touchend")
@@ -238,8 +236,8 @@ export default class Camera extends Component {
                 let id = touch.identifier
                 delete this.toucheInfos[id]
             }
-        })
-        this.canvasRef.current.addEventListener("touchcancel",(e)=>{
+        }
+        this.onTouchCancel = (e)=>{
             e.preventDefault()
             //console.log("Camera.touchcancel")
             //const rect = this.canvasRef.current.getBoundingClientRect()    
@@ -249,16 +247,16 @@ export default class Camera extends Component {
                 let id = touch.identifier
                 delete this.toucheInfos[id]
             }
-        })
-        this.canvasRef.current.addEventListener("touchmove",(e)=>{
+        }
+        this.onTouchMove = (e)=>{
             e.preventDefault()
             const rect = this.canvasRef.current.getBoundingClientRect()    
             //console.log("Camera.touchmove")
 
             const canvasWidth = this.canvasRef.current.width 
             const canvasHeight = this.canvasRef.current.height
-            const styleWidth =  320//this.canvasRef.current.style.width
-            const styleHeight =  320//this.canvasRef.current.style.height
+            const styleWidth =  rect.width//this.canvasRef.current.style.width
+            const styleHeight =  rect.height//this.canvasRef.current.style.height
 
             const touches = e.changedTouches
 
@@ -418,8 +416,30 @@ export default class Camera extends Component {
                     this.toucheInfos[id]={x:currX,y:currY}
                 }
             }
-        })
+        }
+        this.toucheInfos = {}
     }
+    addZoomAndMoveHandlers(){
+        this.toucheInfos = {}
+        this.canvasRef.current.addEventListener("touchstart",this.onTouchStart,false)
+        this.canvasRef.current.addEventListener("touchend",this.onTouchEnd,false)
+        this.canvasRef.current.addEventListener("touchcancel",this.onTouchCancel,false)
+        this.canvasRef.current.addEventListener("touchmove",this.onTouchMove,false)
+    }
+    removeZoomAndMoveHandlers(){
+        this.toucheInfos = {}
+        this.canvasRef.current.removeEventListener("touchstart",this.onTouchStart)
+        this.canvasRef.current.removeEventListener("touchend",this.onTouchEnd)
+        this.canvasRef.current.removeEventListener("touchcancel",this.onTouchCancel)
+        this.canvasRef.current.removeEventListener("touchmove",this.onTouchMove)
+    }
+    // zoomAndMove2(){
+
+    //     this.canvasRef.current.addEventListener("touchstart",this.onTouchStart)
+    //     this.canvasRef.current.addEventListener("touchend",this.onTouchEnd)
+    //     this.canvasRef.current.addEventListener("touchcancel",this.onTouchCancel)
+    //     this.canvasRef.current.addEventListener("touchmove",this.onTouchMove)
+    // }
     zoomAndMove3(){
         this.toucheInfos = {}
 
@@ -614,7 +634,7 @@ export default class Camera extends Component {
         this.canvasRef.current.height=1080
         this.ctx = this.canvasRef.current.getContext("2d")
 
-        this.zoomAndMove2()
+        this.initZoomAndMove()
     }
     componentWillUnmount(){
         console.log("Camera.componentWillUnmount")
@@ -679,6 +699,10 @@ export default class Camera extends Component {
                     // this.ctx.fill()        
 
                     this.imgRef.current.onload = ()=>{}
+                    this.setState({imageLoaded:true})
+
+                    this.removeZoomAndMoveHandlers()
+                    this.addZoomAndMoveHandlers()
                 }
                 
             })
