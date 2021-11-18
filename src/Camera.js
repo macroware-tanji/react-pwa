@@ -26,189 +26,189 @@ export default class Camera extends Component {
         this.imgZoomRate = 1.0
     }
 
-    zoomAndMove1(){
-        this.toucheInfos = {}
+    // zoomAndMove1(){
+    //     this.toucheInfos = {}
 
-        this.canvasRef.current.addEventListener("touchstart",(e)=>{
-            e.preventDefault()
-            const rect = this.canvasRef.current.getBoundingClientRect()
-            const touches = e.changedTouches
-            //console.log("Camera.touchstart")
-            let x1 = NaN
-            let y1 = NaN
-            let x2 = NaN
-            let y2 = NaN
-            let id1=NaN
-            let id2=NaN
-            if(touches.length>0){
-                x1 = touches[0].clientX
-		        y1 = touches[0].clientY
-                x1 -= rect.left
-                y1 -= rect.top
-                id1 = touches[0].identifier
-            }
-            if(touches.length>1){
-                x2 = touches[1].clientX
-		        y2 = touches[1].clientY
-                x2 -= rect.left
-                y2 -= rect.top
-                id2 = touches[1].identifier
-            }
-            this.setState({x1:x1,
-                y1:y1,x2:x2,
-                y2:y2})
+    //     this.canvasRef.current.addEventListener("touchstart",(e)=>{
+    //         e.preventDefault()
+    //         const rect = this.canvasRef.current.getBoundingClientRect()
+    //         const touches = e.changedTouches
+    //         //console.log("Camera.touchstart")
+    //         let x1 = NaN
+    //         let y1 = NaN
+    //         let x2 = NaN
+    //         let y2 = NaN
+    //         let id1=NaN
+    //         let id2=NaN
+    //         if(touches.length>0){
+    //             x1 = touches[0].clientX
+	// 	        y1 = touches[0].clientY
+    //             x1 -= rect.left
+    //             y1 -= rect.top
+    //             id1 = touches[0].identifier
+    //         }
+    //         if(touches.length>1){
+    //             x2 = touches[1].clientX
+	// 	        y2 = touches[1].clientY
+    //             x2 -= rect.left
+    //             y2 -= rect.top
+    //             id2 = touches[1].identifier
+    //         }
+    //         this.setState({x1:x1,
+    //             y1:y1,x2:x2,
+    //             y2:y2})
             
-            const canvasWidth = this.canvasRef.current.width 
-            const canvasHeight = this.canvasRef.current.height
-            const styleWidth =  320//this.canvasRef.current.style.width
-            const styleHeight =  320//this.canvasRef.current.style.height
+    //         const canvasWidth = this.canvasRef.current.width 
+    //         const canvasHeight = this.canvasRef.current.height
+    //         const styleWidth =  320//this.canvasRef.current.style.width
+    //         const styleHeight =  320//this.canvasRef.current.style.height
 
-            console.log(`Camera.touchstart:(${x1},${y1},${id1}),(${x2},${y2},${id2})` )
-            this.ctx.clearRect(0,0,this.canvasRef.current.width,this.canvasRef.current.height)
-            this.ctx.beginPath()
-            this.ctx.arc(x1*canvasWidth/styleWidth,y1*canvasHeight/styleHeight,50,0,2*Math.PI,false)
-            this.ctx.fillStyle="rgba(255,0,0,255)"
-            this.ctx.fill()    
-        })
-        this.canvasRef.current.addEventListener("touchend",(e)=>{
-            e.preventDefault()
-            const rect = this.canvasRef.current.getBoundingClientRect()    
-            //console.log("Camera.touchend")
-            const touches = e.changedTouches
+    //         console.log(`Camera.touchstart:(${x1},${y1},${id1}),(${x2},${y2},${id2})` )
+    //         this.ctx.clearRect(0,0,this.canvasRef.current.width,this.canvasRef.current.height)
+    //         this.ctx.beginPath()
+    //         this.ctx.arc(x1*canvasWidth/styleWidth,y1*canvasHeight/styleHeight,50,0,2*Math.PI,false)
+    //         this.ctx.fillStyle="rgba(255,0,0,255)"
+    //         this.ctx.fill()    
+    //     })
+    //     this.canvasRef.current.addEventListener("touchend",(e)=>{
+    //         e.preventDefault()
+    //         const rect = this.canvasRef.current.getBoundingClientRect()    
+    //         //console.log("Camera.touchend")
+    //         const touches = e.changedTouches
 
-            let x1 = NaN
-            let y1 = NaN
-            let x2 = NaN
-            let y2 = NaN
-            let id1=NaN
-            let id2=NaN
-            if(touches.length>0){
-                x1 = touches[0].clientX
-		        y1 = touches[0].clientY
-                x1 -= rect.left
-                y1 -= rect.top
-                id1 = touches[0].identifier
-            }
-            if(touches.length>1){
-                x2 = touches[1].clientX
-		        y2 = touches[1].clientY
-                x2 -= rect.left
-                y2 -= rect.top
-                id2 = touches[1].identifier
-            }
-            this.setState({x1:x1,
-                y1:y1,x2:x2,
-                y2:y2})
+    //         let x1 = NaN
+    //         let y1 = NaN
+    //         let x2 = NaN
+    //         let y2 = NaN
+    //         let id1=NaN
+    //         let id2=NaN
+    //         if(touches.length>0){
+    //             x1 = touches[0].clientX
+	// 	        y1 = touches[0].clientY
+    //             x1 -= rect.left
+    //             y1 -= rect.top
+    //             id1 = touches[0].identifier
+    //         }
+    //         if(touches.length>1){
+    //             x2 = touches[1].clientX
+	// 	        y2 = touches[1].clientY
+    //             x2 -= rect.left
+    //             y2 -= rect.top
+    //             id2 = touches[1].identifier
+    //         }
+    //         this.setState({x1:x1,
+    //             y1:y1,x2:x2,
+    //             y2:y2})
 
-            const canvasWidth = this.canvasRef.current.width 
-            const canvasHeight = this.canvasRef.current.height
-            const styleWidth =  320//this.canvasRef.current.style.width
-            const styleHeight =  320//this.canvasRef.current.style.height
+    //         const canvasWidth = this.canvasRef.current.width 
+    //         const canvasHeight = this.canvasRef.current.height
+    //         const styleWidth =  320//this.canvasRef.current.style.width
+    //         const styleHeight =  320//this.canvasRef.current.style.height
 
-            console.log(`Camera.touchend:(${x1},${y1},${id1}),(${x2},${y2},${id2})` )
+    //         console.log(`Camera.touchend:(${x1},${y1},${id1}),(${x2},${y2},${id2})` )
 
-            this.ctx.clearRect(0,0,this.canvasRef.current.width,this.canvasRef.current.height)
-            this.ctx.beginPath()
-            this.ctx.arc(x1*canvasWidth/styleWidth,y1*canvasHeight/styleHeight,50,0,2*Math.PI,false)    
-            this.ctx.fillStyle="rgba(255,0,0,255)"
-            this.ctx.fill()    
+    //         this.ctx.clearRect(0,0,this.canvasRef.current.width,this.canvasRef.current.height)
+    //         this.ctx.beginPath()
+    //         this.ctx.arc(x1*canvasWidth/styleWidth,y1*canvasHeight/styleHeight,50,0,2*Math.PI,false)    
+    //         this.ctx.fillStyle="rgba(255,0,0,255)"
+    //         this.ctx.fill()    
 
-            //console.dir(touches,{depth:null})
-        })
-        this.canvasRef.current.addEventListener("touchcancel",(e)=>{
-            e.preventDefault()
-            //console.log("Camera.touchcancel")
-            const rect = this.canvasRef.current.getBoundingClientRect()    
+    //         //console.dir(touches,{depth:null})
+    //     })
+    //     this.canvasRef.current.addEventListener("touchcancel",(e)=>{
+    //         e.preventDefault()
+    //         //console.log("Camera.touchcancel")
+    //         const rect = this.canvasRef.current.getBoundingClientRect()    
 
-            const touches = e.changedTouches
-            let x1 = NaN
-            let y1 = NaN
-            let x2 = NaN
-            let y2 = NaN
-            let id1=NaN
-            let id2=NaN
-            if(touches.length>0){
-                x1 = touches[0].clientX
-		        y1 = touches[0].clientY
-                x1 -= rect.left
-                y1 -= rect.top
-                id1 = touches[0].identifier
-            }
-            if(touches.length>1){
-                x2 = touches[1].clientX
-		        y2 = touches[1].clientY
-                x2 -= rect.left
-                y2 -= rect.top
-                id2 = touches[1].identifier
-            }
-            this.setState({x1:x1,
-                y1:y1,x2:x2,
-                y2:y2})
+    //         const touches = e.changedTouches
+    //         let x1 = NaN
+    //         let y1 = NaN
+    //         let x2 = NaN
+    //         let y2 = NaN
+    //         let id1=NaN
+    //         let id2=NaN
+    //         if(touches.length>0){
+    //             x1 = touches[0].clientX
+	// 	        y1 = touches[0].clientY
+    //             x1 -= rect.left
+    //             y1 -= rect.top
+    //             id1 = touches[0].identifier
+    //         }
+    //         if(touches.length>1){
+    //             x2 = touches[1].clientX
+	// 	        y2 = touches[1].clientY
+    //             x2 -= rect.left
+    //             y2 -= rect.top
+    //             id2 = touches[1].identifier
+    //         }
+    //         this.setState({x1:x1,
+    //             y1:y1,x2:x2,
+    //             y2:y2})
 
-            console.log(`Camera.touchcancel:(${x1},${y1},${id1}),(${x2},${y2},${id2})` )
+    //         console.log(`Camera.touchcancel:(${x1},${y1},${id1}),(${x2},${y2},${id2})` )
 
-            // const canvasWidth = this.canvasRef.current.width 
-            // const canvasHeight = this.canvasRef.current.height
-            // const styleWidth =  this.canvasRef.current.style.width
-            // const styleHeight =  this.canvasRef.current.style.height
+    //         // const canvasWidth = this.canvasRef.current.width 
+    //         // const canvasHeight = this.canvasRef.current.height
+    //         // const styleWidth =  this.canvasRef.current.style.width
+    //         // const styleHeight =  this.canvasRef.current.style.height
 
-            this.ctx.clearRect(0,0,this.canvasRef.current.width,this.canvasRef.current.height)
+    //         this.ctx.clearRect(0,0,this.canvasRef.current.width,this.canvasRef.current.height)
 
-            // //console.dir(touches,{depth:null})
-        })
-        this.canvasRef.current.addEventListener("touchmove",(e)=>{
-            e.preventDefault()
-            const rect = this.canvasRef.current.getBoundingClientRect()    
-            //console.log("Camera.touchmove")
-            const touches = e.changedTouches
+    //         // //console.dir(touches,{depth:null})
+    //     })
+    //     this.canvasRef.current.addEventListener("touchmove",(e)=>{
+    //         e.preventDefault()
+    //         const rect = this.canvasRef.current.getBoundingClientRect()    
+    //         //console.log("Camera.touchmove")
+    //         const touches = e.changedTouches
         
-            let x1 = NaN
-            let y1 = NaN
-            let x2 = NaN
-            let y2 = NaN
-            let id1=NaN
-            let id2=NaN
-            if(touches.length>0){
-                x1 = touches[0].clientX
-		        y1 = touches[0].clientY
-                x1 -= rect.left
-                y1 -= rect.top
-                id1 = touches[0].identifier
-            }
-            if(touches.length>1){
-                x2 = touches[1].clientX
-		        y2 = touches[1].clientY
-                x2 -= rect.left
-                y2 -= rect.top
-                id2 = touches[1].identifier
-            }
-            this.setState({x1:x1,
-                y1:y1,x2:x2,
-                y2:y2})
+    //         let x1 = NaN
+    //         let y1 = NaN
+    //         let x2 = NaN
+    //         let y2 = NaN
+    //         let id1=NaN
+    //         let id2=NaN
+    //         if(touches.length>0){
+    //             x1 = touches[0].clientX
+	// 	        y1 = touches[0].clientY
+    //             x1 -= rect.left
+    //             y1 -= rect.top
+    //             id1 = touches[0].identifier
+    //         }
+    //         if(touches.length>1){
+    //             x2 = touches[1].clientX
+	// 	        y2 = touches[1].clientY
+    //             x2 -= rect.left
+    //             y2 -= rect.top
+    //             id2 = touches[1].identifier
+    //         }
+    //         this.setState({x1:x1,
+    //             y1:y1,x2:x2,
+    //             y2:y2})
             
-            //console.dir(touches,{depth:null})
-            const canvasWidth = this.canvasRef.current.width 
-            const canvasHeight = this.canvasRef.current.height
-            const styleWidth =  320//this.canvasRef.current.style.width
-            const styleHeight =  320//this.canvasRef.current.style.height
+    //         //console.dir(touches,{depth:null})
+    //         const canvasWidth = this.canvasRef.current.width 
+    //         const canvasHeight = this.canvasRef.current.height
+    //         const styleWidth =  320//this.canvasRef.current.style.width
+    //         const styleHeight =  320//this.canvasRef.current.style.height
 
-            console.log(`Camera.touchmove:(${x1},${y1},${id1}),(${x2},${y2},${id2})` )
+    //         console.log(`Camera.touchmove:(${x1},${y1},${id1}),(${x2},${y2},${id2})` )
 
-            this.ctx.clearRect(0,0,this.canvasRef.current.width,this.canvasRef.current.height)
-            this.ctx.beginPath()
-            this.ctx.arc(x1*canvasWidth/styleWidth,y1*canvasHeight/styleHeight,50,0,2*Math.PI,false)
-            this.ctx.fillStyle="rgba(255,0,0,255)"
-            this.ctx.fill()    
+    //         this.ctx.clearRect(0,0,this.canvasRef.current.width,this.canvasRef.current.height)
+    //         this.ctx.beginPath()
+    //         this.ctx.arc(x1*canvasWidth/styleWidth,y1*canvasHeight/styleHeight,50,0,2*Math.PI,false)
+    //         this.ctx.fillStyle="rgba(255,0,0,255)"
+    //         this.ctx.fill()    
 
-            if( !isNaN(x2) && !isNaN(y2)){
-                this.ctx.beginPath()
-                this.ctx.arc(x2*canvasWidth/styleWidth,y2*canvasHeight/styleHeight,50,0,2*Math.PI,false)    
-                this.ctx.fillStyle="rgba(255,0,0,255)"
-                this.ctx.fill()    
-            }
-        })
+    //         if( !isNaN(x2) && !isNaN(y2)){
+    //             this.ctx.beginPath()
+    //             this.ctx.arc(x2*canvasWidth/styleWidth,y2*canvasHeight/styleHeight,50,0,2*Math.PI,false)    
+    //             this.ctx.fillStyle="rgba(255,0,0,255)"
+    //             this.ctx.fill()    
+    //         }
+    //     })
 
-    }
+    // }
     initZoomAndMove(){
         this.onTouchStart = (e)=>{
             e.preventDefault()
@@ -440,193 +440,193 @@ export default class Camera extends Component {
     //     this.canvasRef.current.addEventListener("touchcancel",this.onTouchCancel)
     //     this.canvasRef.current.addEventListener("touchmove",this.onTouchMove)
     // }
-    zoomAndMove3(){
-        this.toucheInfos = {}
+    // zoomAndMove3(){
+    //     this.toucheInfos = {}
 
-        this.canvasRef.current.addEventListener("touchstart",(e)=>{
-            e.preventDefault()
-        })
-        this.canvasRef.current.addEventListener("touchend",(e)=>{
-            e.preventDefault()
-            const touches = e.changedTouches
-            for(let touch of touches){
-                let id = touch.identifier
-                delete this.toucheInfos[id]
-            }
-        })
-        this.canvasRef.current.addEventListener("touchcancel",(e)=>{
-            e.preventDefault()
-            const touches = e.changedTouches
-            for(let touch of touches){
-                let id = touch.identifier
-                delete this.toucheInfos[id]
-            }
-        })
-        this.canvasRef.current.addEventListener("touchmove",(e)=>{
-            e.preventDefault()
-            const rect = this.canvasRef.current.getBoundingClientRect()    
-            //console.log("Camera.touchmove")
-            const touches = e.changedTouches
+    //     this.canvasRef.current.addEventListener("touchstart",(e)=>{
+    //         e.preventDefault()
+    //     })
+    //     this.canvasRef.current.addEventListener("touchend",(e)=>{
+    //         e.preventDefault()
+    //         const touches = e.changedTouches
+    //         for(let touch of touches){
+    //             let id = touch.identifier
+    //             delete this.toucheInfos[id]
+    //         }
+    //     })
+    //     this.canvasRef.current.addEventListener("touchcancel",(e)=>{
+    //         e.preventDefault()
+    //         const touches = e.changedTouches
+    //         for(let touch of touches){
+    //             let id = touch.identifier
+    //             delete this.toucheInfos[id]
+    //         }
+    //     })
+    //     this.canvasRef.current.addEventListener("touchmove",(e)=>{
+    //         e.preventDefault()
+    //         const rect = this.canvasRef.current.getBoundingClientRect()    
+    //         //console.log("Camera.touchmove")
+    //         const touches = e.changedTouches
 
-            if( touches.length === 1 && Object.keys(this.toucheInfos).length === 1 ){
-                let prevX=0
-                let prevY=0
-                let currX=0
-                let currY=0
-                for(const key of Object.keys(this.toucheInfos)){
-                    prevX = this.toucheInfos[key].x
-                    prevY = this.toucheInfos[key].y
-                }
-                this.toucheInfos={}
-                for(let touch of touches){
-                    currX = touch.clientX
-                    currY = touch.clientY
-                    currX -= rect.left
-                    currY -= rect.top
-                    let id = touch.identifier
-                    this.toucheInfos[id]={x:currX,y:currY}
-                }
-                const dx = currX-prevX
-                const dy = currY-prevY
+    //         if( touches.length === 1 && Object.keys(this.toucheInfos).length === 1 ){
+    //             let prevX=0
+    //             let prevY=0
+    //             let currX=0
+    //             let currY=0
+    //             for(const key of Object.keys(this.toucheInfos)){
+    //                 prevX = this.toucheInfos[key].x
+    //                 prevY = this.toucheInfos[key].y
+    //             }
+    //             this.toucheInfos={}
+    //             for(let touch of touches){
+    //                 currX = touch.clientX
+    //                 currY = touch.clientY
+    //                 currX -= rect.left
+    //                 currY -= rect.top
+    //                 let id = touch.identifier
+    //                 this.toucheInfos[id]={x:currX,y:currY}
+    //             }
+    //             const dx = currX-prevX
+    //             const dy = currY-prevY
 
-                console.log(`(dx:${dx},dy:${dy})`)
+    //             console.log(`(dx:${dx},dy:${dy})`)
 
-                this.imgPosX += dx
-                this.imgPosY += dy
+    //             this.imgPosX += dx
+    //             this.imgPosY += dy
 
-                this.ctx.drawImage(this.imgRef.current,
-                    0,
-                    0,
-                    this.imgRef.current.width,
-                    this.imgRef.current.height,
-                    this.imgPosX,
-                    this.imgPosY,
-                    this.imgRef.current.width * this.imgZoomRate,
-                    this.imgRef.current.height * this.imgZoomRate
-                    )
-                this.ctx.drawImage(this.imgMaskRef.current,0,0,this.canvasRef.current.width,this.canvasRef.current.height)
-            }
-            else if( touches.length === 2 && Object.keys(this.toucheInfos).length === 2 ){
-                let prevX=[]
-                let prevY=[]
-                for(const key of Object.keys(this.toucheInfos)){
-                    prevX.push(this.toucheInfos[key].x)
-                    prevY.push(this.toucheInfos[key].y)
-                }
-                const prevDist = Math.sqrt( Math.pow(prevX[0]-prevX[1],2) + Math.pow(prevY[0]-prevY[1],2))
+    //             this.ctx.drawImage(this.imgRef.current,
+    //                 0,
+    //                 0,
+    //                 this.imgRef.current.width,
+    //                 this.imgRef.current.height,
+    //                 this.imgPosX,
+    //                 this.imgPosY,
+    //                 this.imgRef.current.width * this.imgZoomRate,
+    //                 this.imgRef.current.height * this.imgZoomRate
+    //                 )
+    //             this.ctx.drawImage(this.imgMaskRef.current,0,0,this.canvasRef.current.width,this.canvasRef.current.height)
+    //         }
+    //         else if( touches.length === 2 && Object.keys(this.toucheInfos).length === 2 ){
+    //             let prevX=[]
+    //             let prevY=[]
+    //             for(const key of Object.keys(this.toucheInfos)){
+    //                 prevX.push(this.toucheInfos[key].x)
+    //                 prevY.push(this.toucheInfos[key].y)
+    //             }
+    //             const prevDist = Math.sqrt( Math.pow(prevX[0]-prevX[1],2) + Math.pow(prevY[0]-prevY[1],2))
 
-                this.toucheInfos={}
-                for(let touch of touches){
-                    let x = touch.clientX
-                    let y = touch.clientY
-                    x -= rect.left
-                    y -= rect.top
-                    let id = touch.identifier
-                    this.toucheInfos[id]={x:x,y:y}
-                }
-                let currX=[]
-                let currY=[]
-                for(const key of Object.keys(this.toucheInfos)){
-                    currX.push(this.toucheInfos[key].x)
-                    currY.push(this.toucheInfos[key].y)
-                }
-                const currDist = Math.sqrt( Math.pow(currX[0]-currX[1],2) + Math.pow(currY[0]-currY[1],2))
-                const zoomRate = currDist/prevDist
-                const prevWidth = this.imgRef.current.width * this.imgZoomRate
-                const prevHeight = this.imgRef.current.width * this.imgZoomRate
+    //             this.toucheInfos={}
+    //             for(let touch of touches){
+    //                 let x = touch.clientX
+    //                 let y = touch.clientY
+    //                 x -= rect.left
+    //                 y -= rect.top
+    //                 let id = touch.identifier
+    //                 this.toucheInfos[id]={x:x,y:y}
+    //             }
+    //             let currX=[]
+    //             let currY=[]
+    //             for(const key of Object.keys(this.toucheInfos)){
+    //                 currX.push(this.toucheInfos[key].x)
+    //                 currY.push(this.toucheInfos[key].y)
+    //             }
+    //             const currDist = Math.sqrt( Math.pow(currX[0]-currX[1],2) + Math.pow(currY[0]-currY[1],2))
+    //             const zoomRate = currDist/prevDist
+    //             const prevWidth = this.imgRef.current.width * this.imgZoomRate
+    //             const prevHeight = this.imgRef.current.width * this.imgZoomRate
 
-                this.imgZoomRate *= zoomRate
+    //             this.imgZoomRate *= zoomRate
 
-                const currWidth = this.imgRef.current.width * this.imgZoomRate
-                const currHeight = this.imgRef.current.width * this.imgZoomRate
+    //             const currWidth = this.imgRef.current.width * this.imgZoomRate
+    //             const currHeight = this.imgRef.current.width * this.imgZoomRate
 
-                const dx = (prevWidth/currWidth)/2.0
-                const dy = (prevHeight/currHeight)/2.0
+    //             const dx = (prevWidth/currWidth)/2.0
+    //             const dy = (prevHeight/currHeight)/2.0
 
-                this.imgPosX += dx
-                this.imgPosY += dy
+    //             this.imgPosX += dx
+    //             this.imgPosY += dy
 
-                this.ctx.drawImage(this.imgRef.current,
-                    0,
-                    0,
-                    this.imgRef.current.width,
-                    this.imgRef.current.height,
-                    this.imgPosX,
-                    this.imgPosY,
-                    this.imgRef.current.width * this.imgZoomRate,
-                    this.imgRef.current.height * this.imgZoomRate
-                    )
-                this.ctx.drawImage(this.imgMaskRef.current,0,0,this.canvasRef.current.width,this.canvasRef.current.height)
+    //             this.ctx.drawImage(this.imgRef.current,
+    //                 0,
+    //                 0,
+    //                 this.imgRef.current.width,
+    //                 this.imgRef.current.height,
+    //                 this.imgPosX,
+    //                 this.imgPosY,
+    //                 this.imgRef.current.width * this.imgZoomRate,
+    //                 this.imgRef.current.height * this.imgZoomRate
+    //                 )
+    //             this.ctx.drawImage(this.imgMaskRef.current,0,0,this.canvasRef.current.width,this.canvasRef.current.height)
 
-                console.log(`(rate:${zoomRate})`)
-            }
-            else{
-                this.toucheInfos={}
-                for(let touch of touches){
-                    let currX = touch.clientX
-                    let currY = touch.clientY
-                    currX -= rect.left
-                    currY -= rect.top
-                    let id = touch.identifier
-                    this.toucheInfos[id]={x:currX,y:currY}
-                }
-            }
-        })
-    }
-    zoomAndMove4(){
-        this.toucheInfos = {}
+    //             console.log(`(rate:${zoomRate})`)
+    //         }
+    //         else{
+    //             this.toucheInfos={}
+    //             for(let touch of touches){
+    //                 let currX = touch.clientX
+    //                 let currY = touch.clientY
+    //                 currX -= rect.left
+    //                 currY -= rect.top
+    //                 let id = touch.identifier
+    //                 this.toucheInfos[id]={x:currX,y:currY}
+    //             }
+    //         }
+    //     })
+    // }
+    // zoomAndMove4(){
+    //     this.toucheInfos = {}
 
-        this.canvasRef.current.addEventListener("touchstart",(e)=>{
-            e.preventDefault()
-            console.log("touchstart")
-            const touches = e.changedTouches
-            for(let touch of touches){
-                let currX = touch.clientX
-                let currY = touch.clientY
-                let id = touch.identifier
-                this.toucheInfos[id]={x:currX,y:currY}
-            }
-        })
-        this.canvasRef.current.addEventListener("touchend",(e)=>{
-            e.preventDefault()
-            console.log("touchend")
-            const touches = e.changedTouches
-            console.dir(touches,{depth:null})
-            for(let touch of touches){
-                //let currX = touch.clientX
-                //let currY = touch.clientY
-                let id = touch.identifier
-                if(this.toucheInfos[id]){
-                    delete this.toucheInfos[id]
-                }
-                //this.toucheInfos[id]={x:currX,y:currY}
-            }
-        })
-        this.canvasRef.current.addEventListener("touchcancel",(e)=>{
-            e.preventDefault()
-            console.log("touchcancel")
-            const touches = e.changedTouches
-            console.dir(touches,{depth:null})
-            for(let touch of touches){
-                //let currX = touch.clientX
-                //let currY = touch.clientY
-                let id = touch.identifier
-                if(this.toucheInfos[id]){
-                    delete this.toucheInfos[id]
-                }
-                //this.toucheInfos[id]={x:currX,y:currY}
-            }
-        })
-        this.canvasRef.current.addEventListener("touchmove",(e)=>{
-            console.log("touchmove")
-            e.preventDefault()
-            const touches = e.changedTouches
-            if(touches.length !== Object.keys(this.toucheInfos).length){
-                console.dir(Object.keys(this.toucheInfos))
-                console.dir(touches)
-            }
-        })
-    }
+    //     this.canvasRef.current.addEventListener("touchstart",(e)=>{
+    //         e.preventDefault()
+    //         console.log("touchstart")
+    //         const touches = e.changedTouches
+    //         for(let touch of touches){
+    //             let currX = touch.clientX
+    //             let currY = touch.clientY
+    //             let id = touch.identifier
+    //             this.toucheInfos[id]={x:currX,y:currY}
+    //         }
+    //     })
+    //     this.canvasRef.current.addEventListener("touchend",(e)=>{
+    //         e.preventDefault()
+    //         console.log("touchend")
+    //         const touches = e.changedTouches
+    //         console.dir(touches,{depth:null})
+    //         for(let touch of touches){
+    //             //let currX = touch.clientX
+    //             //let currY = touch.clientY
+    //             let id = touch.identifier
+    //             if(this.toucheInfos[id]){
+    //                 delete this.toucheInfos[id]
+    //             }
+    //             //this.toucheInfos[id]={x:currX,y:currY}
+    //         }
+    //     })
+    //     this.canvasRef.current.addEventListener("touchcancel",(e)=>{
+    //         e.preventDefault()
+    //         console.log("touchcancel")
+    //         const touches = e.changedTouches
+    //         console.dir(touches,{depth:null})
+    //         for(let touch of touches){
+    //             //let currX = touch.clientX
+    //             //let currY = touch.clientY
+    //             let id = touch.identifier
+    //             if(this.toucheInfos[id]){
+    //                 delete this.toucheInfos[id]
+    //             }
+    //             //this.toucheInfos[id]={x:currX,y:currY}
+    //         }
+    //     })
+    //     this.canvasRef.current.addEventListener("touchmove",(e)=>{
+    //         console.log("touchmove")
+    //         e.preventDefault()
+    //         const touches = e.changedTouches
+    //         if(touches.length !== Object.keys(this.toucheInfos).length){
+    //             console.dir(Object.keys(this.toucheInfos))
+    //             console.dir(touches)
+    //         }
+    //     })
+    // }
 
     componentDidMount(){
         console.log("Camera.componentDidMount")

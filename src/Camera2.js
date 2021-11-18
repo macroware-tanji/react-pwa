@@ -54,6 +54,7 @@ export default class Camera2 extends Component {
                 })
             }).catch((error)=>{
                 console.log(error)
+                console.dir(error)
                 this.setState({
                     takeButtonEnable:false,
                     retakeButtonEnable:false,

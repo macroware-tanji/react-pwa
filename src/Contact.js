@@ -18,6 +18,7 @@ export default class Contact extends Component {
         return (
             <div>
                 <h1>Contact</h1>
+                <a href="tel:0000000000">0000000000</a>
             </div>
         )
     }
