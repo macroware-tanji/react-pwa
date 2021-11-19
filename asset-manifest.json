@@ -1,25 +1,36 @@
 {
   "files": {
-    "main.css": "/react-pwa/static/css/main.b1846665.chunk.css",
-    "main.js": "/react-pwa/static/js/main.d33a6d5b.chunk.js",
-    "main.js.map": "/react-pwa/static/js/main.d33a6d5b.chunk.js.map",
-    "runtime-main.js": "/react-pwa/static/js/runtime-main.5a6d3182.js",
-    "runtime-main.js.map": "/react-pwa/static/js/runtime-main.5a6d3182.js.map",
-    "static/js/2.8bf63ad2.chunk.js": "/react-pwa/static/js/2.8bf63ad2.chunk.js",
-    "static/js/2.8bf63ad2.chunk.js.map": "/react-pwa/static/js/2.8bf63ad2.chunk.js.map",
-    "static/js/3.56888fa7.chunk.js": "/react-pwa/static/js/3.56888fa7.chunk.js",
-    "static/js/3.56888fa7.chunk.js.map": "/react-pwa/static/js/3.56888fa7.chunk.js.map",
+    "main.css": "/react-pwa/static/css/main.bf55e349.chunk.css",
+    "main.js": "/react-pwa/static/js/main.5c0cdcb6.chunk.js",
+    "main.js.map": "/react-pwa/static/js/main.5c0cdcb6.chunk.js.map",
+    "runtime-main.js": "/react-pwa/static/js/runtime-main.49a15b32.js",
+    "runtime-main.js.map": "/react-pwa/static/js/runtime-main.49a15b32.js.map",
+    "static/css/2.ecdd39c8.chunk.css": "/react-pwa/static/css/2.ecdd39c8.chunk.css",
+    "static/js/2.777c7aac.chunk.js": "/react-pwa/static/js/2.777c7aac.chunk.js",
+    "static/js/2.777c7aac.chunk.js.map": "/react-pwa/static/js/2.777c7aac.chunk.js.map",
+    "static/js/3.ec265884.chunk.js": "/react-pwa/static/js/3.ec265884.chunk.js",
+    "static/js/3.ec265884.chunk.js.map": "/react-pwa/static/js/3.ec265884.chunk.js.map",
     "index.html": "/react-pwa/index.html",
     "service-worker.js": "/react-pwa/service-worker.js",
     "service-worker.js.map": "/react-pwa/service-worker.js.map",
-    "static/css/main.b1846665.chunk.css.map": "/react-pwa/static/css/main.b1846665.chunk.css.map",
-    "static/js/2.8bf63ad2.chunk.js.LICENSE.txt": "/react-pwa/static/js/2.8bf63ad2.chunk.js.LICENSE.txt",
-    "static/media/FacePositionMask2.646f4e6b.svg": "/react-pwa/static/media/FacePositionMask2.646f4e6b.svg"
+    "static/css/2.ecdd39c8.chunk.css.map": "/react-pwa/static/css/2.ecdd39c8.chunk.css.map",
+    "static/css/main.bf55e349.chunk.css.map": "/react-pwa/static/css/main.bf55e349.chunk.css.map",
+    "static/js/2.777c7aac.chunk.js.LICENSE.txt": "/react-pwa/static/js/2.777c7aac.chunk.js.LICENSE.txt",
+    "static/media/ArrowDown.e657d664.svg": "/react-pwa/static/media/ArrowDown.e657d664.svg",
+    "static/media/ArrowUp.02159087.svg": "/react-pwa/static/media/ArrowUp.02159087.svg",
+    "static/media/Background.2a4cff82.svg": "/react-pwa/static/media/Background.2a4cff82.svg",
+    "static/media/CheckOff.06ca897d.svg": "/react-pwa/static/media/CheckOff.06ca897d.svg",
+    "static/media/CheckOn.6297bd68.svg": "/react-pwa/static/media/CheckOn.6297bd68.svg",
+    "static/media/FacePositionMask2.646f4e6b.svg": "/react-pwa/static/media/FacePositionMask2.646f4e6b.svg",
+    "static/media/Search.18a4a72f.svg": "/react-pwa/static/media/Search.18a4a72f.svg",
+    "static/media/SplashBK.416482e1.svg": "/react-pwa/static/media/SplashBK.416482e1.svg",
+    "static/media/TagX.b5bc0701.svg": "/react-pwa/static/media/TagX.b5bc0701.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.5a6d3182.js",
-    "static/js/2.8bf63ad2.chunk.js",
-    "static/css/main.b1846665.chunk.css",
-    "static/js/main.d33a6d5b.chunk.js"
+    "static/js/runtime-main.49a15b32.js",
+    "static/css/2.ecdd39c8.chunk.css",
+    "static/js/2.777c7aac.chunk.js",
+    "static/css/main.bf55e349.chunk.css",
+    "static/js/main.5c0cdcb6.chunk.js"
   ]
 }
