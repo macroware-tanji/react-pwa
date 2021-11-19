@@ -1,0 +1,34 @@
+.taglist {
+    display: flex;
+    justify-content:flex-start;
+    align-items:flex-start;
+    flex-direction:row;
+    flex-wrap: wrap;
+}
+.taglist--tag{
+    box-sizing: border-box;
+    height: 28px;
+    border-radius: 14px;
+    border: 1px solid #C4C4C4;
+
+    display: flex;
+    justify-content:flex-start;
+    align-items:center;
+    /* 上 | 右 | 下 | 左 */
+    /*
+    padding: 2px 2px 2px 10px;
+    margin: 1px 1px 1px 1px;
+    */
+    padding-left:8px;
+    padding-right:5px;
+
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+.taglist--tag__label{
+    margin-right:8px;
+}
+.taglist--tag__xmark{
+    cursor: pointer;    
+}

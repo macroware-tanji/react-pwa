@@ -46,7 +46,7 @@ function Layout() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/page1">Page1</Link>
+            <Link to="/page1">DatePicker</Link>
           </li>
           <li>
             <Link to="/about">About</Link>
@@ -66,7 +66,7 @@ function Layout() {
         </ul>
         <div>
         <button onClick={handleClick} name="home">Home</button>
-        <button onClick={handleClick} name="page1">Page1</button>
+        <button onClick={handleClick} name="page1">DatePicker</button>
         <button onClick={handleClick} name="about">About</button>
         <button onClick={handleClick} name="contact">Contact</button>
         <button onClick={handleClick} name="camera">Camera</button>
