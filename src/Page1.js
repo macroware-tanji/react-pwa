@@ -4,19 +4,7 @@ import "./Page1.css"
 import { registerLocale, setDefaultLocale } from  "react-datepicker";
 import ja from 'date-fns/locale/ja';
 import "react-datepicker/dist/react-datepicker.css";
-
-//import CheckOn from "./CheckOn.svg"
-//import CheckOff from "./CheckOff.svg"
 import "./CheckOnOff.css"
-//import TagX from "./TagX.svg"
-//import Search from "./Search.svg"
-//import ArrowUp from "./ArrowUp.svg"
-//import ArrowDown from "./ArrowDown.svg"
-//import Background from "./Background.svg"
-//import SplashBK from "./SplashBK.svg"
-//import CheckBox from "./CheckBox"
-//import TagList from "./TagList"
-
 import "./date-time.css"
 
 registerLocale('ja', ja)
@@ -34,12 +22,6 @@ export default class Page1 extends Component {
             });
             console.log(`date:${date}`)
           }
-        this.imgCheckOnRef = React.createRef() 
-        this.imgCheckOffRef = React.createRef() 
-        this.imgTagXRef = React.createRef() 
-        this.imgSearchRef = React.createRef() 
-
-        this.onChangeCheckBox = this.onChangeCheckBox.bind(this)
     }
     componentDidMount(){
         console.log("Page1.componentDidMount")
@@ -61,6 +43,7 @@ export default class Page1 extends Component {
           ))
         return (
             <div className="page1">
+                <div className="page1--inner">
                 <h1>DatePicker</h1>
                 <DatePicker
                     selected={this.state.startDate}
@@ -123,28 +106,11 @@ npm install react-datepicker --save
 Or by using Yarn:
 
 yarn add react-datepicker
+
+https://reactdatepicker.com/
 `}
                 </pre>
-                {
-                    /*
-                <TagList/>
-                <CheckBox txt={"チェックボックス"} param={{a:1, b:2, c:3}} onChange={this.onChangeCheckBox}/>
-                <img src={CheckOff} alt="CheckOff" ref={this.imgCheckOffRef} /> 
-                <img src={CheckOn} alt="CheckOn" ref={this.imgCheckOnRef} /> 
-                <img src={TagX} alt="TagX" ref={this.imgTagXRef} />  
-                <img src={Search} alt="TagX" ref={this.imgSearchRef} />
-                <img src={ArrowUp} alt="ArrowUp" />
-                <img src={ArrowDown} alt="ArrowDown" />
-                    */
-                }
-                {
-                    /*
-                <div>
-                <img src={Background} alt="Background" />
-                <img src={SplashBK} alt="SplashBK" />
-                </div> 
-                    */
-                }
+                </div>
             </div>
         )
     }
