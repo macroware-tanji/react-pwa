@@ -6,9 +6,9 @@ import "./CheckBox.css"
 export default class CheckBox extends Component {
     constructor(props){
         super(props);
-        console.log("CheckBox.constructor")
+        console.log("CheckBox.constructor", props)
         this.state = {
-            checked:false
+            checked:this.props.checked ? this.props.checked:false
         }
         this.onChange=this.onChange.bind(this)
         this.onClickOn=this.onClickOn.bind(this)
@@ -29,14 +29,14 @@ export default class CheckBox extends Component {
         this.setState({checked:false})
         console.log("onClickOn")
         if(this.props.onChange){
-            this.props.onChange(false, this.props.param)
+            this.props.onChange(false, this.props.txt, this.props.param)
         }
     }
     onClickOff(e){
         this.setState({checked:true})
         console.log("onClickOff")
         if(this.props.onChange){
-            this.props.onChange(true,this.props.param)
+            this.props.onChange(true, this.props.txt,this.props.param)
         }
     }
     get checked(){
@@ -46,6 +46,7 @@ export default class CheckBox extends Component {
         return this.setState({checked:newValue})
     }
     render() {
+        console.log("CheckBox.render")
         return (
         <span className="checkbox">
             {

@@ -5,17 +5,17 @@ import { registerLocale, setDefaultLocale } from  "react-datepicker";
 import ja from 'date-fns/locale/ja';
 import "react-datepicker/dist/react-datepicker.css";
 
-import CheckOn from "./CheckOn.svg"
-import CheckOff from "./CheckOff.svg"
+//import CheckOn from "./CheckOn.svg"
+//import CheckOff from "./CheckOff.svg"
 import "./CheckOnOff.css"
-import TagX from "./TagX.svg"
-import Search from "./Search.svg"
-import ArrowUp from "./ArrowUp.svg"
-import ArrowDown from "./ArrowDown.svg"
-import Background from "./Background.svg"
-import SplashBK from "./SplashBK.svg"
-import CheckBox from "./CheckBox"
-import TagList from "./TagList"
+//import TagX from "./TagX.svg"
+//import Search from "./Search.svg"
+//import ArrowUp from "./ArrowUp.svg"
+//import ArrowDown from "./ArrowDown.svg"
+//import Background from "./Background.svg"
+//import SplashBK from "./SplashBK.svg"
+//import CheckBox from "./CheckBox"
+//import TagList from "./TagList"
 
 import "./date-time.css"
 
@@ -125,18 +125,18 @@ Or by using Yarn:
 yarn add react-datepicker
 `}
                 </pre>
-                <TagList/>
-                <CheckBox txt={"チェックボックス"} param={{a:1, b:2, c:3}} onChange={this.onChangeCheckBox}/>
                 {
                     /*
-                    */
-                }
+                <TagList/>
+                <CheckBox txt={"チェックボックス"} param={{a:1, b:2, c:3}} onChange={this.onChangeCheckBox}/>
                 <img src={CheckOff} alt="CheckOff" ref={this.imgCheckOffRef} /> 
                 <img src={CheckOn} alt="CheckOn" ref={this.imgCheckOnRef} /> 
                 <img src={TagX} alt="TagX" ref={this.imgTagXRef} />  
                 <img src={Search} alt="TagX" ref={this.imgSearchRef} />
                 <img src={ArrowUp} alt="ArrowUp" />
                 <img src={ArrowDown} alt="ArrowDown" />
+                    */
+                }
                 {
                     /*
                 <div>

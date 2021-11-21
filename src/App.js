@@ -116,7 +116,7 @@ class App extends Component{
   render() {
     return (
       <div>
-        <h1>Hello React Pwa v0.0005</h1>
+        <h1>Hello React Pwa v0.0006</h1>
         {
           /*
         <ul>
