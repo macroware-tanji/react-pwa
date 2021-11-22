@@ -4,7 +4,7 @@ import "./Page1.css"
 import { registerLocale, setDefaultLocale } from  "react-datepicker";
 import ja from 'date-fns/locale/ja';
 import "react-datepicker/dist/react-datepicker.css";
-import "./CheckOnOff.css"
+//import "./CheckOnOff.css"
 import "./date-time.css"
 
 registerLocale('ja', ja)

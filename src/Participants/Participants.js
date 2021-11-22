@@ -190,9 +190,11 @@ export default class Participants extends Component {
                             <input className="participants-search__input" type="search" placeholder={"検索"}/>
                             <img className="participants-search__input-img" src={Search} alt="Search" onClick={this.onClickSearch} />
                         </div>
-                        <div className="participants-search--result">
+                        {
+                            this.searchResult.length > 0 &&
+
+                            <div className="participants-search--result">
                             {
-                                this.searchResult.length > 0 &&
                                 <div className="participants-search--result-item" key={0}>
                                 <CheckBox txt = {"全員選択"}
                                     param = {-1}
@@ -213,6 +215,7 @@ export default class Participants extends Component {
                                 ))
                             }
                         </div>
+                        }
                     </div>
                     )
                 }
